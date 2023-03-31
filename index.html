@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;0,900;1,400&display=swap" rel="stylesheet">    
+</head>
+<body>
+    <div id="main-container">
+        <div id="header-container">library</div>
+        <div id="content-container">
+            <div id="content-header">
+                <button id="new-book-button">+ Add Book</button>
+            </div>
+            <div id="content-body">
+                <!-- <div class="book-container">
+                    <div class="book-text">"The Bell Curve"</div>
+                    <div class="book-text">Richard J. Herrnstein</div>
+                    <div class="book-text">600 pages</div>
+                    <button class="read-indicator-button">Read</button>
+                    <button class="remove-button">Remove</button>
+                </div> -->
+            </div>
+        </div>
+
+        <form class="modal" id="modal" action="/" method="GET" name="">
+            <h1>Add new book</h1>
+            <input type="text" name="title" id="title" class="text-input" placeholder="Title" required>
+            <input type="text" name="author" id="author" class="text-input" placeholder="Author" required>
+            <input type="number" name="pages" id="pages" class="text-input" placeholder="Pages" required>
+            <div id="checkbox-container">
+                <span id="label">Have you read it?</span>
+                <input type="checkbox" name="have-read" id="read"/>
+            </div>
+            <button id="submit-button" type="submit">Submit</button>
+        </form>
+        <div id="overlay"></div>
+    </div>
+
+    
+</body>
+<script src="script.js"></script>
+</html>
