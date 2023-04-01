@@ -5,7 +5,7 @@ const nameForm = document.getElementById('name')
 const authorForm = document.getElementById('author')
 const pagesForm = document.getElementById('pages')
 const readForm = document.getElementById('have-read')
-const contentBody = document.getElementById('content-body')
+const contentBody = document.getElementById('content-grid-container')
 const h1 = document.querySelector('h1')
 
 var error = null;
@@ -75,7 +75,8 @@ function Book(title, author, pages, read){
 function addBookToLibrary(book){
     var container = document.createElement('div')
     container.className = 'book-container'
-    
+    container.dataset.title = book.title
+
     var titleArea = document.createElement('div')
     titleArea.className = 'book-text'
     titleArea.textContent = '"' + book.title + '"'
@@ -92,6 +93,18 @@ function addBookToLibrary(book){
     readButton.className = 'read-indicator-button'
     if(book.read) readButton.textContent = 'Read'
     else readButton.textContent = 'Not read'
+    readButton.addEventListener('click', ()=>{
+        if(event.target.textContent == 'Read') event.target.textContent = 'Not read'
+        else event.target.textContent = 'Read'
+        console.log(event.target.parentNode.dataset.title)
+        
+        for(let i = 0; i < myLibrary.length; i++){
+            if(myLibrary[i].title == event.target.parentNode.dataset.title){
+                myLibrary[i].read = event.target.textContent == 'Read'
+                break
+            }
+        }
+    })
 
     var removeButton = document.createElement('div')
     removeButton.className = 'remove-button'
