@@ -55,7 +55,7 @@
     /* align-items: start; */
     gap: 50px;
     grid-template-columns: 1fr 1fr 1fr;  
-    grid-template-rows: 1fr 1fr;
+    /* grid-template-rows: 1fr 1fr; */
     /* grid-template-columns: auto auto auto;      */
 }
 
@@ -154,9 +154,13 @@ input[type=number] {
 }
 
 #read{
-    width: 16px;
-    height: 16px;
+    width: 18px;
+    height: 18px;
     accent-color: white;
+}
+
+#read:hover{
+    cursor: pointer;
 }
 
 h1{
@@ -177,6 +181,10 @@ h1{
     cursor: pointer;
 }
 
+#submit-button:hover{
+    background-image: linear-gradient(rgb(0 0 0/9%) 0 0);
+}
+
 #add-button:hover{
     background-image: linear-gradient(rgb(0 0 0/9%) 0 0);
 }
@@ -184,21 +192,26 @@ h1{
 .book-container{
     min-width: 340px;
     max-width: 480px;
+    /* min-height: 292px; */
     border-radius: 10px;
     background-color: white;
     box-shadow: 0 1px 5px #BDBDBD;
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     text-align: center;
     gap: 20px;
     padding: 20px;
     font-size: 20px;
 }
 
+.book-text{    
+    overflow-wrap: break-word;
+}
+
 .read-indicator-button{
     width: 100%;
     height: 50px;
-    background-color: #a8ff9e;
     border: none;
     border-radius: 7px;
     font-size: 20px;

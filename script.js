@@ -42,6 +42,7 @@ modal.addEventListener('submit', (e)=>{
     }
 
     else{
+        if(error != null) error.remove()
         error = document.createElement('div')
         error.className = 'error-message'
         error.textContent = 'This book already exists in your library'
@@ -91,13 +92,24 @@ function addBookToLibrary(book){
 
     var readButton = document.createElement('button')
     readButton.className = 'read-indicator-button'
-    if(book.read) readButton.textContent = 'Read'
-    else readButton.textContent = 'Not read'
+    if(book.read){
+        readButton.textContent = 'Read'
+        readButton.style.backgroundColor = '#a8ff9e'
+    } 
+    else{
+        readButton.textContent = 'Not read'
+        readButton.style.backgroundColor = '#f99c9c'
+    } 
     readButton.addEventListener('click', ()=>{
-        if(event.target.textContent == 'Read') event.target.textContent = 'Not read'
-        else event.target.textContent = 'Read'
-        console.log(event.target.parentNode.dataset.title)
-        
+        if(event.target.textContent == 'Read'){
+            event.target.textContent = 'Not read'
+            readButton.style.backgroundColor = '#f99c9c'
+        } 
+        else{
+            event.target.textContent = 'Read'
+            readButton.style.backgroundColor = '#a8ff9e'
+        }
+
         for(let i = 0; i < myLibrary.length; i++){
             if(myLibrary[i].title == event.target.parentNode.dataset.title){
                 myLibrary[i].read = event.target.textContent == 'Read'
@@ -109,6 +121,16 @@ function addBookToLibrary(book){
     var removeButton = document.createElement('div')
     removeButton.className = 'remove-button'
     removeButton.textContent = 'Remove'
+    removeButton.addEventListener('click', ()=>{
+        event.target.parentNode.remove()
+
+        for(let i = 0; i < myLibrary.length; i++){
+            if(myLibrary[i].title == event.target.parentNode.dataset.title){
+                myLibrary.splice(i, 1)
+                break
+            }
+        }
+    })
 
     container.appendChild(titleArea)
     container.appendChild(authorArea)

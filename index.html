@@ -25,9 +25,9 @@
 
         <form class="modal" id="modal" action="/" method="GET" name="">
             <h1>Add new book</h1>
-            <input type="text" name="title" id="title" class="text-input" placeholder="Title" required>
-            <input type="text" name="author" id="author" class="text-input" placeholder="Author" required>
-            <input type="number" name="pages" id="pages" class="text-input" placeholder="Pages" required>
+            <input type="text" name="title" id="title" class="text-input" placeholder="Title" maxlength="100" required>
+            <input type="text" name="author" id="author" class="text-input" placeholder="Author" maxlength="100" required>
+            <input type="number" name="pages" id="pages" class="text-input" placeholder="Pages" max="30000" required>
             <div id="checkbox-container">
                 <span id="label">Have you read it?</span>
                 <input type="checkbox" name="have-read" id="read"/>
