@@ -1,3 +1,3 @@
 # BRHS - Website Live Preview
 
-https://library
+https://KaitoNishikawa.github.io/library/
